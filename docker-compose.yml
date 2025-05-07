@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  node-app:
+    build: .
+    container_name: my-node-app
+    volumes:
+      - ./serviceAccountKey.json:/usr/src/app/serviceAccountKey.json:ro
+    ports:
+      - "4567:4567"
+    environment:
+      - NODE_ENV=production
